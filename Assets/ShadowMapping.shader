@@ -36,7 +36,7 @@ Shader "Custom/ShadowMapper"
             v2f vert (appdata v)
             {
                 v2f output;
-                output.vertex = mul(mul(float4(v.vertex.xyz, 1.0), unity_ObjectToWorld), _LightprojectionMatrix);
+                output.vertex = mul(mul(float4(v.vertex.xyz, 1.0), _LightViewMatrix), _LightprojectionMatrix);
                 output.uv = ComputeScreenPos(output.vertex);
                 
                 return output;

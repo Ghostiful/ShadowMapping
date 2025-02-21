@@ -44,8 +44,6 @@ Shader "Custom/ShadowMapping"
                 float4 worldPos = mul(unity_ObjectToWorld, v.vertex);
                 float3 worldNormal = normalize(mul(float4(v.normal, 0), transpose(unity_WorldToObject)).xyz);
 
-                float3 lightDirection = normalize((lightPos - worldPos).xyz);
-
                 float4x4 constantMatrix = {0.5, 0, 0, 0.5,
                                            0, 0.5, 0, 0.5,
                                            0, 0, 0.5, 0.5,
